@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Possibilities Tech & Media Services — iPhones & Laptop Service</title>
+  <meta name="description" content="UK iPhones & expert laptop repairs — delivery across Ghana. Contact via WhatsApp." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#ffffff; --muted:#6b7280; --accent-1:#2563eb; --accent-2:#7c3aed;
+      --glass: rgba(255,255,255,0.08);
+      --maxw:1100px;
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.45);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);color:#0b1220;line-height:1.4}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-bottom:1px solid #e6e9ee;z-index:20}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:700}
+    .nav{display:none;gap:20px}
+    .nav a{color:inherit;text-decoration:none;font-weight:600;font-size:14px}
+    .cta a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--accent-1);color:white;text-decoration:none;font-weight:600}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;padding:48px;background:linear-gradient(135deg,#2563eb 0%, #7c3aed 100%);color:white;border-radius:18px}
+    .hero h1{font-size:34px;margin:0 0 8px;line-height:1.05}
+    .hero p{margin:0 0 16px;opacity:0.95}
+    .hero .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:white;color:#0b1220;text-decoration:none;font-weight:700}
+    .btn.secondary{background:transparent;border:2px solid rgba(255,255,255,0.16);color:white}
+    .features{display:flex;gap:16px;margin-top:18px;flex-wrap:wrap}
+    .feature{display:flex;align-items:center;gap:8px;opacity:0.95;font-weight:600;font-size:14px}
+    /* teaser cards */
+    .teaser{background:rgba(255,255,255,0.08);padding:12px;border-radius:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .card-mini{background:white;color:#0b1220;padding:12px;border-radius:12px}
+    .card-mini .price{font-weight:800}
+    /* Sections */
+    section{padding:40px 0}
+    .section-title{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+    .grid{display:grid;gap:14px}
+    .phones-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+    .card{background:var(--card);border-radius:14px;padding:16px;box-shadow:var(--shadow);border:1px solid rgba(11,17,32,0.04)}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .muted{color:var(--muted)}
+    .actions{display:flex;gap:8px;margin-top:10px}
+    .btn-outline{padding:8px 12px;border-radius:10px;border:1px solid #d1d5db;background:white;text-decoration:none;color:#0b1220;font-weight:600}
+    /* services/pricing grid */
+    .services-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+    .pricing-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    /* contact */
+    .contact-grid{grid-template-columns:1fr 360px}
+    .contact-card{background:var(--card);padding:18px;border-radius:14px}
+    form input, form select, form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #e6e9ee;margin-bottom:10px;font-size:14px}
+    footer{padding:20px 0;border-top:1px solid #eef2f7;margin-top:20px}
+    /* responsiveness */
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 420px}
+      .nav{display:flex}
+    }
+    @media(max-width:880px){
+      .contact-grid{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+    }
+    /* small util */
+    .small{font-size:13px;color:var(--muted)}
+    .socials{display:flex;gap:10px;margin-top:8px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#fff0f5;color:#7c3aed;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container top">
+      <div class="brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 8h18M3 12h18M3 16h18" stroke="#0b1220" stroke-width="1.5" stroke-linecap="round"/></svg> Possibilities Tech & Media Services</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#phones">iPhones</a>
+        <a href="#services">Laptop Service</a>
+        <a href="#pricing">Prices</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta"><a id="whatsappTop" href="#" target="_blank" rel="noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M2 12a10 10 0 1017.32 7.32L22 22l-2.68-2.68A10 10 0 002 12z" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>WhatsApp</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-labelledby="home-heading">
+      <div>
+        <h1 id="home-heading">UK iPhones & Expert Laptop Repairs</h1>
+        <p>Clean, tested phones + fast, affordable servicing. Delivery available across Ghana.</p>
+        <div class="buttons">
+          <a class="btn" href="#phones">Browse iPhones</a>
+          <a class="btn secondary" href="#services">Laptop Service</a>
+        </div>
+        <div class="features" aria-hidden>
+          <div class="feature">🔒 Tested & Trusted</div>
+          <div class="feature">🚚 Delivery Available</div>
+          <div class="feature">🏬 Based in Ghana</div>
+        </div>
+      </div>
+
+      <aside class="teaser" aria-hidden>
+        <!-- small price cards (rendered by JS) -->
+        <div id="teaserGrid"></div>
+      </aside>
+    </section>
+
+    <!-- PHONES -->
+    <section id="phones" aria-labelledby="phones-title">
+      <div class="section-title">
+        <h2 id="phones-title">Available iPhones</h2>
+        <div class="small">UK-imported, neat condition. Locked & Unlocked options.</div>
+      </div>
+
+      <div id="phonesGrid" class="grid phones-grid"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-title">
+      <div class="section-title">
+        <h2 id="services-title">Laptop Servicing & Repairs</h2>
+        <div class="small">Speed, security, and reliability—done professionally.</div>
+      </div>
+
+      <div id="servicesGrid" class="grid services-grid"></div>
+
+      <div style="margin-top:14px">
+        <a class="btn" id="bookService" href="#">Book a Service</a>
+        <a class="btn btn-outline" href="#pricing" style="margin-left:8px">See Service Prices</a>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <div class="section-title">
+        <h2 id="pricing-title">Service Prices (From)</h2>
+        <div class="small">Transparent starting rates. Final price depends on diagnosis & parts.</div>
+      </div>
+
+      <div class="grid pricing-grid">
+        <div class="card">
+          <h3>Quick Fix</h3>
+          <ul class="muted">
+            <li>Virus/Malware Removal — GH₵ 150</li>
+            <li>Windows/macOS Install — GH₵ 200</li>
+            <li>Driver/Software Errors — GH₵ 120</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Performance</h3>
+          <ul class="muted">
+            <li>SSD Upgrade (labor) — GH₵ 150</li>
+            <li>RAM Upgrade (labor) — GH₵ 100</li>
+            <li>Cleanup & Thermal Paste — GH₵ 180</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Hardware</h3>
+          <ul class="muted">
+            <li>Screen/Keyboard/Hinge — Ask</li>
+            <li>Battery Replacement — From GH₵ 250</li>
+            <li>Charging Port/Fan — From GH₵ 200</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section-title">
+        <h2 id="contact-title">Contact & Location</h2>
+        <div class="small">Reach out for orders, diagnostics, or bulk deals.</div>
+      </div>
+
+      <div class="grid contact-grid">
+        <div>
+          <div class="card contact-card">
+            <h3>Contact & Location</h3>
+            <p class="muted">Reach out for orders, diagnostics, or bulk deals.</p>
+            <div style="margin-top:12px">
+              <div><strong>Phone:</strong> <a href="tel:+233248184054" id="phoneLink">+233 24 818 4054</a></div>
+              <div style="margin-top:8px"><strong>WhatsApp:</strong> <a href="#" id="whatsappLink">Chat on WhatsApp</a></div>
+              <div style="margin-top:8px"><strong>Location:</strong> Accra, Ghana</div>
+              <div class="socials" aria-hidden>
+                <a href="#" title="Instagram">IG</a>
+                <a href="#" title="Facebook">FB</a>
+                <a href="#" title="YouTube">YT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Quick Request</h3>
+          <form id="quickForm" onsubmit="return false;">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="tel" id="phone" placeholder="Phone / WhatsApp" required />
+            <select id="need">
+              <option>Buy iPhone</option>
+              <option>Service Laptop</option>
+              <option>Bulk/Corporate</option>
+            </select>
+            <textarea id="message" rows="4" placeholder="Tell us what you need"></textarea>
+            <button id="sendWhats" class="btn" style="width:100%;margin-top:6px">Send on WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Possibilities Tech & Media Services — All rights reserved.</div>
+        <div style="display:flex;gap:12px">
+          <a href="#home" class="small">Back to top</a>
+          <a href="#" class="small">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+F
+  <script>
+    // ======= Replace this with your real WhatsApp number in international format (no spaces), e.g. +233248184054
+    const WHATSAPP_NUMBER = '+233248184054';
+
+    // phones data ported from your original file (trimmed)
+    const phones = [
+      { model: "iPhone 5s", storage: "16GB", price: 300 },
+      { model: "iPhone 6", storage: "16/32/64GB", price: 450 },
+      { model: "iPhone 6s", storage: "16/32/64GB", price: 700 },
+      { model: "iPhone 7", storage: "32/128GB", price: 950 },
+      { model: "iPhone 7 Plus", storage: "32/128GB", price: 1250 },
+      { model: "iPhone 8", storage: "64GB", price: 1300 },
+      { model: "iPhone 8 Plus", storage: "64GB", price: 1650 },
+      { model: "iPhone X", storage: "64/256GB", price: 2000 },
+      { model: "iPhone XR", storage: "64/128GB", price: 2150 },
+      { model: "iPhone XS Max", storage: "64/256GB", price: 2900 },
+      { model: "iPhone 11", storage: "64/128GB", price: 2800 },
+      { model: "iPhone 11 Pro", storage: "64/256GB", price: 3650 },
+      { model: "iPhone 11 Pro Max", storage: "64/256GB", price: 4000 },
+      { model: "iPhone 12", storage: "64/128GB", price: 3300 },
+      { model: "iPhone 12 Pro", storage: "128GB", price: 4400 },
+      { model: "iPhone 12 Pro Max", storage: "128/256GB", price: 5800 },
+      { model: "iPhone 13", storage: "128GB", price: 4600 },
+      { model: "iPhone 13 Pro", storage: "128GB", price: 6000 },
+      { model: "iPhone 13 Pro Max", storage: "128GB", price: 7000 },
+      { model: "iPhone 14", storage: "Locked/eSIM/Physical", price: 3300 },
+      { model: "iPhone 14 Plus", storage: "Locked/eSIM/Unlocked", price: 4000 },
+      { model: "iPhone 14 Pro", storage: "eSIM Locked", price: 5500 }
+    ];
+
+    // services data
+    const services = [
+      { title: "Battery & Charging", desc: "Battery replacement, charging port & power issues." },
+      { title: "Speed Upgrades", desc: "SSD + RAM upgrades for 3–5× faster performance." },
+      { title: "Hardware Repairs", desc: "Keyboards, screens, hinges, fans, ports." },
+      { title: "Security & OS", desc: "Windows/macOS install, virus removal, drivers." }
+    ];
+
+    // helper for url-encoded whatsapp link
+    function whatsappLink(text){
+      const base = 'https://wa.me/' + WHATSAPP_NUMBER.replace(/^\+/, '') + '?text=' + encodeURIComponent(text);
+      return base;
+    }
+
+    // render teaser mini-cards (four phones)
+    (function renderTeaser(){
+      const container = document.getElementById('teaserGrid');
+      // take phones 11..14 equivalent (slice 10..14) if available, else first 4
+      const subset = phones.slice(10,14).length ? phones.slice(10,14) : phones.slice(0,4);
+      subset.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'card-mini';
+        div.innerHTML = '<div class="small">Starting from</div><div class="price">GH₵ ' + p.price.toLocaleString() + '</div><div style="margin-top:6px;font-weight:600">' + p.model + '</div><div class="small">' + p.storage + '</div>';
+        container.appendChild(div);
+      });
+    })();
+
+    // render phones grid
+    (function renderPhones(){
+      const grid = document.getElementById('phonesGrid');
+      phones.forEach((p,i) => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = '<h3>' + p.model + ' <span style="float:right;color:var(--accent-1);font-weight:800">GH₵ ' + p.price.toLocaleString() + '</span></h3>' +
+                       '<div class="muted">Storage: ' + p.storage + '</div>' +
+                       '<div class="actions"><a class="btn-outline" href="' + whatsappLink("Hi, I\\'m interested in " + p.model + " (" + p.storage + "). Is it available?") + '" target="_blank">DM on WhatsApp</a>' +
+                       '<a class="btn-outline" href="#contact">Call Now</a></div>';
+        grid.appendChild(el);
+      });
+    })();
+
+    // render services
+    (function renderServices(){
+      const grid = document.getElementById('servicesGrid');
+      services.forEach(s => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = '<h3>' + s.title + '</h3><div class="muted">' + s.desc + '</div>';
+        grid.appendChild(el);
+      });
+    })();
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // set phone / whatsapp links
+    document.getElementById('phoneLink').href = 'tel:' + WHATSAPP_NUMBER;
+    document.getElementById('whatsappLink').href = whatsappLink('Hello Possibilities Tech & Media Services');
+    document.getElementById('whatsappTop').href = whatsappLink("Hi, I'm interested in your phones/laptop services");
+    document.getElementById('bookService').href = whatsappLink('Hi, I want to service my laptop');
+
+    // form send via whatsapp
+    document.getElementById('sendWhats').addEventListener('click', () => {
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const need = document.getElementById('need').value;
+      const msg = document.getElementById('message').value.trim();
+      if(!name || !phone){
+        alert('Please provide your name and phone number.');
+        return;
+      }
+      const text = `Hello, my name is ${name}. I need: ${need}. Phone: ${phone}. ${msg ? 'Message: ' + msg : ''}`;
+      window.open(whatsappLink(text), '_blank');
+    });
+
+    // Accessibility: smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = a.getAttribute('href');
+        if(target.length>1){
+          e.preventDefault();
+          document.querySelector(target).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+
+    // Quick note to developer: update WHATSAPP_NUMBER to your real number above.
+  </script>
+</body>
+</html>
