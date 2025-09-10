@@ -91,12 +91,22 @@
     .socials a { color: white; font-weight: 600; transition: transform var(--transition); }
     .socials a:hover { transform: scale(1.1); }
     .chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--secondary); color: white; font-weight: 700; }
+    /* Ad Section */
+    .ad-section { background: var(--secondary); color: white; padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow); margin: 2rem 0; text-align: center; }
+    .ad-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .ad-section p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .ad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .ad-card { background: var(--card); color: var(--primary); padding: 1rem; border-radius: var(--radius); transition: transform var(--transition); text-align: center; }
+    .ad-card:hover { transform: translateY(-5px); }
+    .ad-card img { max-width: 100%; height: auto; border-radius: var(--radius); margin-bottom: 0.5rem; }
+    .ad-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .ad-card .price { font-weight: 800; color: var(--accent); }
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .card, .card-mini { animation: fadeIn 0.5s ease-in-out; }
+    .card, .card-mini, .ad-card { animation: fadeIn 0.5s ease-in-out; }
     /* Responsiveness */
     @media (min-width: 1024px) {
       .hero { grid-template-columns: 1fr 450px; }
@@ -109,6 +119,8 @@
       .hero { padding: 2.5rem 1.5rem; }
       .teaser { transform: none; }
       .alert-banner { padding: 0.5rem 1rem; font-size: 0.9rem; }
+      .ad-section { padding: 1.5rem; }
+      .ad-grid { grid-template-columns: 1fr; }
     }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
   </style>
@@ -161,6 +173,12 @@
       <aside class="teaser">
         <div id="teaserGrid"></div>
       </aside>
+    </section>
+    <section class="ad-section" aria-labelledby="ad-heading">
+      <h2 id="ad-heading">Hot Deals Today!</h2>
+      <p>Check out these UK-imported iPhones available now. As of 01:52 PM GMT, Wednesday, September 10, 2025, grab them at unbeatable prices!</p>
+      <div class="ad-grid" id="adGrid"></div>
+      <a href="#phones" class="btn" style="margin-top: 1.5rem;">Explore All iPhones</a>
     </section>
     <section id="phones" aria-labelledby="phones-title">
       <div class="section-title">
@@ -289,26 +307,26 @@
 
     // Data
     const phones = [
-      { model: "iPhone 6s", storage: "16/32/64GB", price: 700 },
-      { model: "iPhone 7", storage: "32/128GB", price: 950 },
-      { model: "iPhone 7 Plus", storage: "32/128GB", price: 1250 },
-      { model: "iPhone 8", storage: "64GB", price: 1300 },
-      { model: "iPhone 8 Plus", storage: "64GB", price: 1650 },
-      { model: "iPhone X", storage: "64/256GB", price: 2000 },
-      { model: "iPhone XR", storage: "64/128GB", price: 2150 },
-      { model: "iPhone XS Max", storage: "64/256GB", price: 2900 },
-      { model: "iPhone 11", storage: "64/128GB", price: 2800 },
-      { model: "iPhone 11 Pro", storage: "64/256GB", price: 3650 },
-      { model: "iPhone 11 Pro Max", storage: "64/256GB", price: 4000 },
-      { model: "iPhone 12", storage: "64/128GB", price: 3300 },
-      { model: "iPhone 12 Pro", storage: "128GB", price: 4400 },
-      { model: "iPhone 12 Pro Max", storage: "128/256GB", price: 5800 },
-      { model: "iPhone 13", storage: "128GB", price: 4600 },
-      { model: "iPhone 13 Pro", storage: "128GB", price: 6000 },
-      { model: "iPhone 13 Pro Max", storage: "128GB", price: 7000 },
-      { model: "iPhone 14", storage: "Locked/eSIM/Physical", price: 3300 },
-      { model: "iPhone 14 Plus", storage: "Locked/eSIM/Unlocked", price: 4000 },
-      { model: "iPhone 14 Pro", storage: "eSIM Locked", price: 5500 }
+      { model: "iPhone 6s", storage: "16/32/64GB", price: 700, image: "https://theapplewiki.com/images/applewiki/8/8a/IPhone_6s_Rose.png" },
+      { model: "iPhone 7", storage: "32/128GB", price: 950, image: "https://theapplewiki.com/images/applewiki/a/ab/IPhone_7.png" },
+      { model: "iPhone 7 Plus", storage: "32/128GB", price: 1250, image: "https://theapplewiki.com/images/applewiki/0/09/IPhone_7_Plus.png" },
+      { model: "iPhone 8", storage: "64GB", price: 1300, image: "https://theapplewiki.com/images/applewiki/d/de/IPhone_8.png" },
+      { model: "iPhone 8 Plus", storage: "64GB", price: 1650, image: "https://theapplewiki.com/images/applewiki/c/c2/IPhone_8_Plus.png" },
+      { model: "iPhone X", storage: "64/256GB", price: 2000, image: "https://theapplewiki.com/images/applewiki/c/cd/IPhone_X.png" },
+      { model: "iPhone XR", storage: "64/128GB", price: 2150, image: "https://theapplewiki.com/images/applewiki/7/77/IPhone_XR.png" },
+      { model: "iPhone XS Max", storage: "64/256GB", price: 2900, image: "https://theapplewiki.com/images/applewiki/3/37/IPhone_XS_Max.jpg" },
+      { model: "iPhone 11", storage: "64/128GB", price: 2800, image: "https://theapplewiki.com/images/applewiki/4/47/IPhone_11.png" },
+      { model: "iPhone 11 Pro", storage: "64/256GB", price: 3650, image: "https://theapplewiki.com/images/applewiki/5/58/Iphone11pro.jpg" },
+      { model: "iPhone 11 Pro Max", storage: "64/256GB", price: 4000, image: "https://theapplewiki.com/images/applewiki/0/0c/IPhone_11_Pro_Max.png" },
+      { model: "iPhone 12", storage: "64/128GB", price: 3300, image: "https://www.apple.com/v/iphone/compare/q/images/overview/compare_iphone12_blue__cs0mfz9i0ec2_large.jpg" },
+      { model: "iPhone 12 Pro", storage: "128GB", price: 4400, image: "https://www.apple.com/v/iphone/compare/q/images/overview/compare_iphone12_pro_pacific_blue__brjnr8xyuewi_large.jpg" },
+      { model: "iPhone 12 Pro Max", storage: "128/256GB", price: 5800, image: "https://www.apple.com/v/iphone/compare/q/images/overview/compare_iphone12_pro_max_pacific_blue__chvhw4xnn3bm_large.jpg" },
+      { model: "iPhone 13", storage: "128GB", price: 4600, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-blue-select-2021?wid=940&hei=1112&fmt=png-alpha" },
+      { model: "iPhone 13 Pro", storage: "128GB", price: 6000, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-blue-select?wid=940&hei=1112&fmt=png-alpha" },
+      { model: "iPhone 13 Pro Max", storage: "128GB", price: 7000, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=940&hei=1112&fmt=png-alpha" },
+      { model: "iPhone 14", storage: "Locked/eSIM/Physical", price: 3300, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=5120&hei=2880&fmt=png-alpha&.v=1661026582322" },
+      { model: "iPhone 14 Plus", storage: "Locked/eSIM/Unlocked", price: 4000, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-blue?wid=5120&hei=2880&fmt=png-alpha" },
+      { model: "iPhone 14 Pro", storage: "eSIM Locked", price: 5500, image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=5120&hei=2880&fmt=png-alpha" }
     ];
 
     const services = [
@@ -341,6 +359,7 @@
       const grid = document.getElementById('phonesGrid');
       grid.innerHTML = phones.map(p => `
         <div class="card">
+          <img src="${p.image}" alt="${p.model}" style="max-width: 100%; height: auto; border-radius: var(--radius); margin-bottom: 0.5rem;">
           <h3>${p.model} <span style="float: right; color: var(--primary); font-weight: 800;">GH₵ ${p.price.toLocaleString()}</span></h3>
           <div class="muted">Storage: ${p.storage}</div>
           <div class="actions">
@@ -361,6 +380,19 @@
       `).join('');
     };
 
+    const renderAd = () => {
+      const grid = document.getElementById('adGrid');
+      const samplePhones = phones.slice(0, 4); // Sample of first 4 phones
+      grid.innerHTML = samplePhones.map(p => `
+        <div class="ad-card">
+          <img src="${p.image}" alt="${p.model} image" />
+          <h3>${p.model}</h3>
+          <div class="muted">Storage: ${p.storage}</div>
+          <div class="price">From GH₵ ${p.price.toLocaleString()}</div>
+        </div>
+      `).join('');
+    };
+
     // Initialize
     const init = () => {
       // Set dynamic content
@@ -374,6 +406,7 @@
       renderTeaser();
       renderPhones();
       renderServices();
+      renderAd();
 
       // Form submission
       const form = document.getElementById('quickForm');
