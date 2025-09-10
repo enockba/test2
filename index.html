@@ -40,7 +40,6 @@
     .nav a:hover, .nav a:focus { color: var(--accent-1); outline: none; }
     .cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 999px; background: var(--accent-1); color: white; text-decoration: none; font-weight: 600; transition: background var(--transition); }
     .cta a:hover, .cta a:focus { background: var(--accent-2); outline: none; }
-    /* Hero */
     .hero { display: grid; grid-template-columns: 1fr; gap: 1.25rem; padding: 3rem; background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%); color: white; border-radius: var(--radius); }
     .hero h1 { font-size: 2.125rem; margin: 0 0 0.5rem; line-height: 1.1; }
     .hero p { margin: 0 0 1rem; opacity: 0.95; }
@@ -51,11 +50,9 @@
     .btn.secondary:hover, .btn.secondary:focus { background: rgba(255, 255, 255, 0.2); }
     .features { display: flex; gap: 1rem; margin-top: 1.125rem; flex-wrap: wrap; }
     .feature { display: flex; align-items: center; gap: 0.5rem; opacity: 0.95; font-weight: 600; font-size: 0.875rem; }
-    /* Teaser cards */
     .teaser { background: var(--glass); padding: 0.75rem; border-radius: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.625rem; }
     .card-mini { background: white; color: #0b1220; padding: 0.75rem; border-radius: 12px; }
     .card-mini .price { font-weight: 800; }
-    /* Sections */
     section { padding: 2.5rem 0; }
     .section-title { display: flex; flex-direction: column; gap: 0.375rem; margin-bottom: 0.875rem; }
     .grid { display: grid; gap: 0.875rem; }
@@ -68,7 +65,6 @@
     .btn-outline:hover, .btn-outline:focus { border-color: var(--accent-1); color: var(--accent-1); outline: none; }
     .services-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     .pricing-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    /* Contact */
     .contact-grid { grid-template-columns: 1fr 360px; }
     .contact-card { background: var(--card); padding: 1.125rem; border-radius: var(--radius); }
     form input, form select, form textarea { width: 100%; padding: 0.625rem; border-radius: 10px; border: 1px solid #e6e9ee; margin-bottom: 0.625rem; font-size: 0.875rem; font-family: inherit; }
@@ -78,7 +74,6 @@
     .small { font-size: 0.8125rem; color: var(--muted); }
     .socials { display: flex; gap: 0.625rem; margin-top: 0.5rem; }
     .chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0.625rem; border-radius: 999px; background: #fff0f5; color: var(--accent-2); font-weight: 700; }
-    /* Responsiveness */
     @media (min-width: 900px) {
       .hero { grid-template-columns: 1fr 420px; }
       .nav { display: flex; }
@@ -88,7 +83,6 @@
       .hero h1 { font-size: 1.75rem; }
       .hero { padding: 2rem; }
     }
-    /* Accessibility */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
   </style>
 </head>
@@ -262,8 +256,6 @@
 
     // Data
     const phones = [
-      { model: "iPhone 5s", storage: "16GB", price: 300 },
-      { model: "iPhone 6", storage: "16/32/64GB", price: 450 },
       { model: "iPhone 6s", storage: "16/32/64GB", price: 700 },
       { model: "iPhone 7", storage: "32/128GB", price: 950 },
       { model: "iPhone 7 Plus", storage: "32/128GB", price: 1250 },
@@ -301,7 +293,7 @@
     // Render Functions
     const renderTeaser = () => {
       const container = document.getElementById('teaserGrid');
-      const subset = phones.slice(10, 14).length ? phones.slice(10, 14) : phones.slice(0, 4);
+      const subset = phones.slice(8, 12).length ? phones.slice(8, 12) : phones.slice(0, 4);
       container.innerHTML = subset.map(p => `
         <div class="card-mini">
           <div class="small">Starting from</div>
